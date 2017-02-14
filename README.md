@@ -1,0 +1,2 @@
+# zombicide-survivor-generator
+Character
