@@ -1,0 +1,272 @@
+{
+  "data": [
+    {
+      "name": "+1 free Magic Action",
+      "desc": "The Survivor has one extra free Magic Action. This Action may only be used for Magic Actions."
+    },
+    {
+      "name": "+1 free Melee Action",
+      "desc": "The Survivor has one extra free Melee Action. This Action may only be used for a Melee Action."
+    },
+    {
+      "name": "+1 free Move Action",
+      "desc": "The Survivor has one extra free Move Action. This Action may only be used as a Move Action."
+    },
+    {
+      "name": "+1 free Ranged Action",
+      "desc": "The Survivor has one extra free Ranged Action. This Action may only be used as a Ranged Action."
+    },
+    {
+      "name": "+1 free Search Action",
+      "desc": "The Survivor has one extra free Search Action. This Action may only be used to Search, and the Survivor can still only Search once per Turn."
+    },
+    {
+      "name": "+1 max Range",
+      "desc": "The Survivor’s Ranged weapons and Combat spells’ maximum Range is increased by 1."
+    },
+    {
+      "name": "+1 Zone per Move",
+      "desc": "The Survivor can move through oneextra Zone each time he performs a Move Action. This Skillstacks with other effects benefiting Move Actions. Enteringa Zone containing Zombies ends the Survivor’s Move Action."
+    },
+    {
+      "name": "2 Zones per Move Action",
+      "desc": "When the Survivor spends oneAction to Move, he can move one or two Zones instead ofone. Entering a Zone containing Zombies ends the Survivor’sMove Action."
+    },
+    {
+      "name": "Ambidextrous",
+      "desc": "The Survivor treats all Combat spells, Meleeand Ranged weapons as if they had the Dual symbol."
+    },
+    {
+      "name": "Barbarian",
+      "desc": "When resolving a Melee Action, the Survivor maysubstitute the Dice number of the Melee weapon(s) he useswith the number of Zombies standing in the targeted Zone. Skills affecting the dice value, like +1 die: Melee, still apply."
+    },
+    {
+      "name": "Blitz",
+      "desc": "Each time the Survivor kills the last Zombie in a Zone,he gets 1 free Move Action to use immediately."
+    },
+    {
+      "name": "Bloodlust: Combat",
+      "desc": "Spend one Action with the Survivor:He Moves up to two Zones to a Zone containing at leastone Zombie. He then gains one free Combat Action (Melee,Ranged or Magic)."
+    },
+    {
+      "name": "Bloodlust: Magic",
+      "desc": "Spend one Action with the Survivor: HeMoves up to two Zones to a Zone containing at least one Zombie. He then gains one free Magic Action, to use immediately."
+    },
+    {
+      "name": "Bloodlust: Melee",
+      "desc": "Spend one Action with the Survivor: HeMoves up to two Zones to a Zone containing at least one Zombie. He then gains one free Melee Action, to use immediately."
+    },
+    {
+      "name": "Bloodlust: Ranged",
+      "desc": "Spend one Action with the Survivor: HeMoves up to two Zones to a Zone containing at least one Zombie. He then gains one free Ranged Action, to use immediately."
+    },
+    {
+      "name": "Born leader",
+      "desc": "During the Survivor’s Turn, hemay give one free Action to another Survivorto use as he pleases. This Action must be usedduring the recipient’s next Turn or it is lost."
+    },
+    {
+      "name": "Break-in",
+      "desc": "In order to open doors, the Survivor rolls no dice,and needs no equipment (but still spends an Action to do so). He doesn’t make Noise while using this Skill. However, otherprerequisites still apply (such as taking a designated Objectivebefore a door can be opened). Moreover, the Survivor gains oneextra free Action that can only be used to open doors."
+    },
+    {
+      "name": "Charge",
+      "desc": "The Survivor can use this Skill for free, as often as hepleases, during each of his Turns: He moves up to two Zonesto a Zone containing at least one Zombie. Normal Movementrules still apply. Entering a Zone containing Zombies endsthe Survivor’s Move Action."
+    },
+    {
+      "name": "Collector: [Zombie type]",
+      "desc": "The Survivor gains double theexperience each time he kills a Zombie of the specified type."
+    },
+    {
+      "name": "Destiny",
+      "desc": "The Survivor can use this Skill once per Turn whenhe reveals an Equipment card he drew. You can ignore anddiscard that card, then draw another Equipment card."
+    },
+    {
+      "name": "Free reload",
+      "desc": "The Survivor reloads reloadable weapons (HandCrossbows, Orcish Crossbow, etc.) for free."
+    },
+    {
+      "name": "Frenzy: Combat",
+      "desc": "All weapons and Combat spells the Survivorcarries gain +1 die per Wound the Survivor suffers. Dualweapons gain a die each, for a total of +2 dice per Wound andper Dual Combat Action (Melee, Ranged or Magic)."
+    },
+    {
+      "name": "Frenzy: Magic",
+      "desc": "Combat spells the Survivor carries gain +1 dieper Wound the Survivor suffers. Dual Combat spells gain a dieeach, for a total of +2 dice per Wound and per Dual Magic Action."
+    },
+    {
+      "name": "Frenzy: Melee",
+      "desc": "Melee weapons the Survivor carries gain +1 dieper Wound the Survivor suffers. Dual Melee weapons gain a dieeach, for a total of +2 dice per Wound and per Dual Melee Action."
+    },
+    {
+      "name": "Frenzy: Ranged",
+      "desc": "Ranged weapons the Survivor carries gain+1 die per Wound the Survivor suffers. Dual Ranged weaponsgain a die each, for a total of +2 dice per Wound and per DualRanged Action."
+    },
+    {
+      "name": "Hit & run",
+      "desc": "The Survivor can use this Skill for free, just afterhe resolved a Magic, Melee or Ranged Action resulting in atleast a Zombie kill. He can then resolve a free Move Action. The Survivor does not spend extra Actions to perform thisfree Move Action if Zombies are standing in his Zone."
+    },
+    {
+      "name": "Hold your nose",
+      "desc": "This Skill can be used once per Turn. TheSurvivor gets a free Search Action in the Zone if he has eliminateda Zombie (even in a Vault or a street Zone) the sameGame Round. This Action may only be used to Search, andthe Survivor can still only Search once per Turn."
+    },
+    {
+      "name": "Ironclad: [Zombie type]",
+      "desc": "The Survivor ignores all Woundscoming from Zombies of the specified type (such as “Walker”,“Runner”, etc.)."
+    },
+    {
+      "name": "Iron hide",
+      "desc": "The Survivor can make Armor rolls with a 5+ Armorvalue, even when he does not wear an armor on his Body slot. Wearing an armor, the Survivor adds 1 to the result of each diehe rolls for Armor rolls. The maximum result is always 6."
+    },
+    {
+      "name": "Iron rain",
+      "desc": "When resolving a Ranged Action, the Survivor maysubstitute the Dice number of the Ranged weapon(s) he useswith the number of Zombies standing in the targeted Zone. Skills affecting the dice value, like +1 die: Ranged, still apply."
+    },
+    {
+      "name": "Is that all you’ve got?",
+      "desc": "You can use this Skill any time theSurvivor is about to get Wounds. Discard one Equipmentcard in your Survivor’s inventory for each Wound he’s aboutto receive. Negate a Wound per discarded Equipment card."
+    },
+    {
+      "name": "Jump",
+      "desc": "The Survivor can use this Skill once during each Activation. The Survivor spends one Action: He moves two Zonesinto a Zone to which he has Line of Sight. Movement relatedSkills (like +1 Zone per Move Action or Slippery) are ignored,but Movement penalties (like having Zombies in the startingZone) apply. Ignore everything in the intervening Zone."
+    },
+    {
+      "name": "Lifesaver",
+      "desc": "The Survivor can use this Skill, for free, once duringeach of his Turns. Select a Zone containing at least one Zombieat Range 1 from your Survivor. Choose Survivors in the selectedZone to be dragged to your Survivor’s Zone without penalty. This is not a Move Action. A Survivor can decline the rescue andstay in the selected Zone if his controller chooses. Both Zonesneed to share a clear path. A Survivor can’t cross closed doors orwalls, and can’t be extracted into or out of a Vault."
+    },
+    {
+      "name": "Lock it down",
+      "desc": "At the cost of one Action, the Survivor canclose an open door in his Zone. Opening or destroying itagain later does not trigger a new Zombie Spawn."
+    },
+    {
+      "name": "Loud",
+      "desc": "Once during each of his Turns, the Survivor can make ahuge amount of noise! Until this Survivor’s next Turn, the Zonehe used this Skill in is considered to have the highest number ofNoise tokens on the entire board. If different Survivors have thisSkill, only the last one who used it applies the effects."
+    },
+    {
+      "name": "Low profile",
+      "desc": "The Survivor can’t get hit by Survivors’ Magicand Ranged Actions. Ignore him when casting a Combat spellor shooting in the Zone he stands in. Game effects that killeverything in the targeted Zone, like Dragon Fire, still killhim, though."
+    },
+    {
+      "name": "Lucky",
+      "desc": "The Survivor can re-roll once all the dice for eachAction (or Armor roll) he takes. The new result takes the placeof the previous one. This Skill stacks with the effects of otherSkills and Equipment that allows re-rolls."
+    },
+    {
+      "name": "Mana rain",
+      "desc": "When resolving a Magic Action, the Survivormay substitute the Dice number of the Combat spell(s) he useswith the number of Zombies standing in the targeted Zone. Skills affecting the dice value, like +1 die: Magic, still apply."
+    },
+    {
+      "name": "Marksman",
+      "desc": "The Survivor may freely choose the targets ofall his Magic and Ranged Actions. Misses don’t hit Survivors."
+    },
+    {
+      "name": "Matching set!",
+      "desc": "When a Survivor performs a Search Actionand draws an Equipment card with the Dual symbol, he canimmediately take a second card of the same type from theEquipment deck. Shuffle the deck afterward."
+    },
+    {
+      "name": "Point-blank",
+      "desc": "The Survivor can resolve Ranged and MagicActions in his own Zone, no matter the minimum Range. When resolving a Magic or Ranged Action at Range 0, theSurvivor freely chooses the targets and can kill any type ofZombies. His Combat spells and Ranged weapons still needto inflict enough Damage to kill his targets. Misses don’t hitSurvivors."
+    },
+    {
+      "name": "Reaper: Combat",
+      "desc": "Use this Skill when assigning hits whileresolving a Combat Action (Melee, Ranged or Magic). Oneof these hits can freely kill an additional identical Zombiein the same Zone. Only a single additional Zombie can bekilled per Action when using this Skill. The Survivor gainsthe experience for the additional Zombie."
+    },
+    {
+      "name": "Reaper: Magic",
+      "desc": "Use this Skill when assigning hits whileresolving a Magic Action. One of these hits can freely kill anadditional identical Zombie in the same Zone. Only a single additionalZombie can be killed per Action when using this Skill. The Survivor gains the experience for the additional Zombie."
+    },
+    {
+      "name": "Reaper: Melee",
+      "desc": "Use this Skill when assigning hits whileresolving a Melee Action. One of these hits can freely kill anadditional identical Zombie in the same Zone. Only a single additionalZombie can be killed per Action when using this Skill. The Survivor gains the experience for the additional Zombie."
+    },
+    {
+      "name": "Reaper: Ranged",
+      "desc": "Use this Skill when assigning hits whileresolving a Ranged Action. One of these hits can freely kill anadditional identical Zombie in the same Zone. Only a single additionalZombie can be killed per Action when using this Skill. The Survivor gains the experience for the additional Zombie."
+    },
+    {
+      "name": "Regeneration",
+      "desc": "At the end of each Game Round, remove allWounds the Survivor received. Regeneration doesn’t work ifthe Survivor has been eliminated."
+    },
+    {
+      "name": "Roll 6: +1 die Combat",
+      "desc": "You may roll an additional die foreach “6” rolled on any Combat Action (Melee, Ranged orMagic). Keep on rolling additional dice as long as you keepgetting “6”. Game effects that allow re-rolls (the Plenty OfArrows Equipment card, for example) must be used beforerolling any additional dice for this Skill."
+    },
+    {
+      "name": "Roll 6: +1 die Magic",
+      "desc": "You may roll an additional die for each“6” rolled on a Magic Action. Keep on rolling additional diceas long as you keep getting “6”. Game effects that allow rerollsmust be used before rolling any additional dice for thisSkill."
+    },
+    {
+      "name": "Roll 6: +1 die Melee",
+      "desc": "You may roll an additional die for each“6” rolled on a Melee Action. Keep on rolling additional diceas long as you keep getting “6”. Game effects that allow rerollsmust be used before rolling any additional dice for thisSkill."
+    },
+    {
+      "name": "Roll 6: +1 die Ranged",
+      "desc": "You may roll an additional die foreach “6” rolled on a Ranged Action. Keep on rolling additionaldice as long as you keep getting “6”. Game effects that allowre-rolls (the Plenty Of Arrows Equipment card, for example)must be used before rolling any additional dice for this Skill."
+    },
+    {
+      "name": "Rotten",
+      "desc": "At the end of his Turn, if the Survivorhas not resolved a Combat Action (Melee,Ranged or Magic) and not produced a Noisetoken, place a Rotten token next to his base. Aslong as he has this token, he is totally ignoredby all Zombies and is not considered a Noise token. Zombiesdon’t attack him and will even walk past him. The Survivorloses his Rotten token if he resolves any kind of CombatAction (Melee, Ranged or Magic) or makes noise. Even withthe Rotten token, the Survivor still has to spend extra Actionsto move out of a Zone crowded with Zombies."
+    },
+    {
+      "name": "Scavenger",
+      "desc": "The Survivor can Search in any Zone. This includesstreet Zones, Vault Zones, etc."
+    },
+    {
+      "name": "Search: +1 card",
+      "desc": "Draw an extra card when Searching withthe Survivor."
+    },
+    {
+      "name": "Shove",
+      "desc": "The Survivor can use this Skill, for free, once duringeach of his Turns. Select a Zone at Range 1 from yourSurvivor. All Zombies standing in your Survivor’s Zone arepushed to the selected Zone. This is not a Movement. BothZones need to share a clear path. A Zombie can’t cross closeddoors, ramparts (see the Wulfsburg expansion) or walls, butcan be shoved in or out of a Vault."
+    },
+    {
+      "name": "Slippery",
+      "desc": "The Survivor does not spend extra Actions whenhe performs a Move Action out of a Zone containing Zombies. Entering a Zone containing Zombies ends the Survivor’sMove Action."
+    },
+    {
+      "name": "Spellbook",
+      "desc": "All Combat spells and Enchantments in the Survivor’sInventory are considered equipped in Hand. With thisSkill, a Survivor could effectively be considered as havingseveral Combat spells and Enchantments cards equipped inHand. For obvious reasons, he can only use two identical dualCombat Spells at any given time. Choose any combination oftwo before resolving Actions or rolls involving the Survivor."
+    },
+    {
+      "name": "Spellcaster",
+      "desc": "The Survivor has one extra free Action. This Actionmay only be used for a Magic Action or an Enchantment Action."
+    },
+    {
+      "name": "Sprint",
+      "desc": "The Survivor can use this Skill once during eachof his Turns. Spend one Move Action with the Survivor: Hemay move two or three Zones instead of one. Entering a Zonecontaining Zombies ends the Survivor’s Move Action."
+    },
+    {
+      "name": "Super strength",
+      "desc": "Consider the Damage value of Melee weaponsused by the Survivor to be 3."
+    },
+    {
+      "name": "Starts with a [Equipment]",
+      "desc": "The Survivor begins the gamewith the indicated Equipment; its card is automatically assignedto him during Setup."
+    },
+    {
+      "name": "Steady hand",
+      "desc": "The Survivor can ignore other Survivors of hischoosing when missing with a Magic or Ranged Action. TheSkill does not apply to game effects killing everything in thetargeted Zone (such as a Dragon Fire, for example)."
+    },
+    {
+      "name": "Swordmaster",
+      "desc": "The Survivor treats all Melee weapons as ifthey had the Dual symbol."
+    },
+    {
+      "name": "Tactician",
+      "desc": "The Survivor’s Turn can be resolved anytimeduring the Players’ Phase, before or after any other Survivor’sTurn. If several Survivors benefit from this Skill at the sametime, choose their Turn order."
+    },
+    {
+      "name": "Taunt",
+      "desc": "The Survivor can use this Skill, for free, once duringeach of his Turns. Select a Zone your Survivor can see. AllZombies standing in the selected Zone immediately gain anextra Activation: They try to reach the taunting Survivor byany means available. Taunted Zombies ignore all other Survivors. They do not attack them and cross the Zone they standin if needed to reach the taunting Survivor."
+    },
+    {
+      "name": "Tough",
+      "desc": "The Survivor ignores the first Wound he receivesfrom a single Zombie every Zombies’ Phase."
+    },
+    {
+      "name": "Trick shot",
+      "desc": "When the Survivor is equipped with Dual Combatspells or Ranged weapons, he can aim at different Zoneswith each spell/weapon in the same Action."
+    },
+    {
+      "name": "Zombie link",
+      "desc": "The Survivor plays an extra Turn each time anExtra Activation card is drawn from the Zombie pile. He playsbefore the extra-activated Zombies. If several Survivors benefitfrom this Skill at the same time, choose their Turn order."
+    }
+  ]
+}

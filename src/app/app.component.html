@@ -1,3 +1,24 @@
-<h1>
-  {{title}}
-</h1>
+<md-toolbar color="primary">{{ title }}</md-toolbar>
+<md-sidenav-container class="example-container">
+  <md-sidenav class="example-sidenav" align="end" mode="side" opened="true">
+    Will Search for Food
+  </md-sidenav>
+
+  <md-grid-list cols="2">
+    <md-grid-tile *ngFor="let skill of skills" [style.background]="lightblue">
+      <md-card class="example-card">
+        <md-card-header>
+          <md-card-title>Clovis</md-card-title>
+          <md-card-subtitle>Black Plague Basic Set</md-card-subtitle>
+        </md-card-header>
+        <img md-card-image src="assets/img/base/fClovis.jpg">
+        <md-card-content>
+          <p> Survivor Name </p>
+        </md-card-content>
+        <md-card-actions>
+          <button md-button>EDIT</button>
+        </md-card-actions>
+      </md-card>
+    </md-grid-tile>
+  </md-grid-list>
+</md-sidenav-container>

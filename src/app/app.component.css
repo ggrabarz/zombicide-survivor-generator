@@ -1,0 +1,26 @@
+.example-container {
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+
+}
+
+.example-sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.example-sidenav {
+  padding: 20px;
+  width: 300px;
+}
+
+.example-card {
+  width: 400px;
+}
+
+.example-header-image {
+  background-image: url('assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
