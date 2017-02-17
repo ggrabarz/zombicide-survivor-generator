@@ -1,26 +1,33 @@
-.example-container {
-  padding: 20px;
-  border: 1px solid rgba(0, 0, 0, 0.5);
-
+md-sidenav-container {
+  height: 100%;
 }
 
-.example-sidenav-content {
+.container {
+  padding: 20px;
+}
+
+.sidenav-content {
   display: flex;
   height: 100%;
   align-items: center;
   justify-content: center;
-}
-
-.example-sidenav {
   padding: 20px;
-  width: 300px;
+  border-left: 1px solid rgba(0, 0, 0, 0.5);
 }
 
-.example-card {
-  width: 400px;
+.toolbar-icon {
+  font-size: 24px;
+  margin-right: 10px;
 }
 
-.example-header-image {
-  background-image: url('assets/img/examples/shiba1.jpg');
-  background-size: cover;
+.search-container{
+  width: 100%;
+}
+
+.set-filter.mat-toolbar>div {
+  display: none;
+}
+
+.survivor-tile img {
+  width: 100%;
 }

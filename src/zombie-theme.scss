@@ -1,0 +1,10 @@
+@import '~@angular/material/core/theming/all-theme';
+
+@include mat-core();
+
+$dark-p: mat-palette($mat-red, 800);
+$dark-a: mat-palette($mat-blue-grey);
+
+$dark-t: mat-dark-theme($dark-p, $dark-a);
+
+@include angular-material-theme($dark-t);

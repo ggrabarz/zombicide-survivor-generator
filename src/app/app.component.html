@@ -1,24 +1,47 @@
-<md-toolbar color="primary">{{ title }}</md-toolbar>
-<md-sidenav-container class="example-container">
-  <md-sidenav class="example-sidenav" align="end" mode="side" opened="true">
-    Will Search for Food
-  </md-sidenav>
+<div>
+  <md-toolbar color="primary">
+    <md-icon class="toolbar-icon">face</md-icon>Zombicide Survivor Generator
+  </md-toolbar>
+  <md-sidenav-container>
+    <md-sidenav class="sidenav-content" align="end" mode="side" opened>
+      <md-tab-group>
+        <md-tab label="Skills">
+          <md-input-container dividerColor="accent" align="right" floatPlaceholder="auto">
+            <input mdInput type="text" placeholder="Find a skill">
+          </md-input-container>
+          <md-icon>search</md-icon>
+          <div *ngFor="let skill of skills">
+            <p> {{ skill.name }} </p>
+            <p> {{ skill.desc.slice(-20) }} </p>
+          </div>
+        </md-tab>
+        <md-tab label="Survivors">
 
-  <md-grid-list cols="2">
-    <md-grid-tile *ngFor="let skill of skills" [style.background]="lightblue">
-      <md-card class="example-card">
-        <md-card-header>
-          <md-card-title>Clovis</md-card-title>
-          <md-card-subtitle>Black Plague Basic Set</md-card-subtitle>
-        </md-card-header>
-        <img md-card-image src="assets/img/base/fClovis.jpg">
-        <md-card-content>
-          <p> Survivor Name </p>
-        </md-card-content>
-        <md-card-actions>
-          <button md-button>EDIT</button>
-        </md-card-actions>
-      </md-card>
-    </md-grid-tile>
-  </md-grid-list>
-</md-sidenav-container>
+        </md-tab>
+      </md-tab-group>
+    </md-sidenav>
+
+    <md-toolbar class="set-filter">
+      <md-chip-list>
+        <md-chip color="primary" [selected]="set.bs" (click)="set.bs = !set.bs">Base Set</md-chip>
+        <md-chip color="primary" [selected]="set.wb" (click)="set.wb = !set.wb">Wolfsburg</md-chip>
+        <md-chip color="primary" [selected]="set.hb" (click)="set.hb = !set.hb">Hero Box</md-chip>
+        <md-chip color="primary" [selected]="set.gb" (click)="set.gb = !set.gb">Guest Box</md-chip>
+      </md-chip-list>
+    </md-toolbar>
+    <div class="container">
+      <md-grid-list cols="3" rowHeight="300px" gutterSize="15px">
+        <md-grid-tile *ngFor="let survivor of survivors" class="survivor-tile">
+          <img src="assets/img{{ survivor.image }}">
+          <md-grid-tile-footer>
+            <h3 md-line>{{ survivor.name }}</h3>
+            <h2 md-line>{{ survivor.set }}</h2>
+            <button md-icon-button>
+            <md-icon>info</md-icon>
+          </button>
+          </md-grid-tile-footer>
+        </md-grid-tile>
+      </md-grid-list>
+    </div>
+  </md-sidenav-container>
+</div>

@@ -10,7 +10,7 @@
       "outDir": "dist",
       "assets": [
         "assets",
-        "favicon.ico"
+        "zombie-brain.ico"
       ],
       "index": "index.html",
       "main": "main.ts",
@@ -19,7 +19,8 @@
       "tsconfig": "tsconfig.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "styles.css",
+        "zombie-theme.scss"
       ],
       "scripts": [],
       "environments": {
