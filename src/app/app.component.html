@@ -4,34 +4,53 @@
   </md-toolbar>
   <md-sidenav-container>
     <md-sidenav class="sidenav-content" align="end" mode="side" opened>
+
       <md-tab-group>
-        <md-tab label="Skills">
-          <md-input-container dividerColor="accent" align="right" floatPlaceholder="auto">
-            <input mdInput type="text" placeholder="Find a skill">
-          </md-input-container>
-          <md-icon>search</md-icon>
-          <div *ngFor="let skill of skills">
-            <p> {{ skill.name }} </p>
-            <p> {{ skill.desc.slice(-20) }} </p>
+
+        <md-tab label="Survivors">
+          <div class="tab-content">
+            <div>
+              <md-input-container dividerColor="accent" align="right">
+                <input mdInput type="text" placeholder="Find a survivor by name" #f1 (input)="survivorFilter$.next(f1.value)">
+                <md-icon mdSuffix>search</md-icon>
+              </md-input-container>
+              <div *ngFor="let survivor of survivors" class="skill-pill">
+                <strong>{{ survivor.name }}</strong> - {{ survivor.set }}
+              </div>
+            </div>
           </div>
         </md-tab>
-        <md-tab label="Survivors">
 
+        <md-tab label="Skills">
+          <div class="tab-content">
+            <div>
+              <md-input-container dividerColor="accent" align="right">
+                <input mdInput type="text" placeholder="Find a skill" #f2 (input)="skillFilter$.next(f2.value)">
+                <md-icon mdSuffix>search</md-icon>
+              </md-input-container>
+              <div *ngFor="let skill of skills" class="skill-pill">
+                <strong>{{ skill.name }}</strong> - {{ skill.desc }}
+              </div>
+            </div>
+          </div>
         </md-tab>
+
       </md-tab-group>
+
     </md-sidenav>
 
     <md-toolbar class="set-filter">
-      <md-chip-list>
+      <md-chip-list (click)="filterSurvivors()">
         <md-chip color="primary" [selected]="set.bs" (click)="set.bs = !set.bs">Base Set</md-chip>
-        <md-chip color="primary" [selected]="set.wb" (click)="set.wb = !set.wb">Wolfsburg</md-chip>
+        <md-chip color="primary" [selected]="set.wb" (click)="set.wb = !set.wb">Wulfsburg</md-chip>
         <md-chip color="primary" [selected]="set.hb" (click)="set.hb = !set.hb">Hero Box</md-chip>
         <md-chip color="primary" [selected]="set.gb" (click)="set.gb = !set.gb">Guest Box</md-chip>
       </md-chip-list>
     </md-toolbar>
+
     <div class="container">
-      <md-grid-list cols="3" rowHeight="300px" gutterSize="15px">
-        <md-grid-tile *ngFor="let survivor of survivors" class="survivor-tile">
+      <md-grid-list cols="3" rowHeight="95:80" gutterSize="15px">
+        <md-grid-tile *ngFor="let survivor of survivors; trackBy: survivor?.name" class="survivor-tile">
           <img src="assets/img{{ survivor.image }}">
           <md-grid-tile-footer>
             <h3 md-line>{{ survivor.name }}</h3>
@@ -43,5 +62,6 @@
         </md-grid-tile>
       </md-grid-list>
     </div>
+
   </md-sidenav-container>
 </div>
