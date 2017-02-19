@@ -1,6 +1,58 @@
 {
   "data": [
     {
+      "name": "+1 Action",
+      "desc": "The Survivor has an extra Action he may use as he pleases."
+    },
+    {
+      "name": "+1 Damage: [Type]",
+      "desc": "The Survivor gets a +1 Damage bonus with the specified type of Combat Action (Magic, Melee or Ranged)."
+    },
+    {
+      "name": "+1 Damage with [Equipment]",
+      "desc": "The Survivor gets a +1 Damage bonus with the specified Equipment."
+    },
+    {
+      "name": "+1 to dice roll: Combat",
+      "desc": "The Survivor adds 1 to the resultof each die he rolls on a Combat Action (Melee, Ranged or Magic). The maximum result is always 6."
+    },
+    {
+      "name": "+1 to dice roll: Magic",
+      "desc": "The Survivor adds 1 to the result of each die he rolls on a Magic Action. The maximum result is always 6."
+    },
+    {
+      "name": "+1 to dice roll: Melee",
+      "desc": "The Survivor adds 1 to the result of each die he rolls in Melee Actions. The maximum result is always 6."
+    },
+    {
+      "name": "+1 to dice roll: Ranged",
+      "desc": "The Survivor adds 1 to the result of each die he rolls in Ranged Actions. The maximum result is always 6."
+    },
+    {
+      "name": "+1 die: Combat",
+      "desc": "The Survivor’s weapons and Combat spells roll an extra die in Combat (Melee, Ranged or Magic). Dual weapons and spells gain a die each, for a total of +2 dice per Dual Combat Action."
+    },
+    {
+      "name": "+1 die: Magic",
+      "desc": "The Survivor’s Combat spells roll an extra die for Magic Actions. Dual Combat spells gain a die each, for a total of +2 dice per Dual Magic Action."
+    },
+    {
+      "name": "+1 die: Melee",
+      "desc": "The Survivor’s Melee weapons roll an extra die for Melee Actions. Dual Melee weapons gain a die each, for a total of +2 dice per Dual Melee Action."
+    },
+    {
+      "name": "+1 die: Ranged",
+      "desc": "The Survivor’s Ranged weapons roll an extra die for Ranged Actions. Dual Ranged weapons gain a die each, for a total of +2 dice per Dual Ranged Action."
+    },
+    {
+      "name": "+1 free Combat Action",
+      "desc": "The Survivor has one extra free Combat Action. This Action may only be used for Melee, Ranged or Magic Actions."
+    },
+    {
+      "name": "+1 free Enchantment Action",
+      "desc": "The Survivor has one extra free Enchantment Action. This Action may only be used for Enchantment Actions."
+    },
+    {
       "name": "+1 free Magic Action",
       "desc": "The Survivor has one extra free Magic Action. This Action may only be used for Magic Actions."
     },

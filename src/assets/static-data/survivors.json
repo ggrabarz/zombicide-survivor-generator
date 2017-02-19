@@ -3,77 +3,108 @@
     {
       "name": "Ann",
       "set": "Black Plague Base",
-      "image": "/base/fAnn.jpg"
+      "image": "/base",
+      "skills": [
+        "Bloodlust: Melee",
+        "+1 Action",
+        "+1 free Magic Action",
+        "+1 free Melee Action",
+        "+1 free Combat Action",
+        "+1 to dice roll: Combat",
+        "Roll 6: +1 die Combat"
+      ]
     },
     {
       "name": "Baldric",
       "set": "Black Plague Base",
-      "image": "/base/fBaldric.jpg"
+      "image": "/base",
+      "skills": [
+        "Spellcaster",
+        "+1 Action",
+        "+1 free Magic Action",
+        "Spellbook",
+        "+1 die: Magic",
+        "+1 free Combat Action",
+        "+1 to dice roll: Melee"
+      ]
     },
     {
       "name": "Clovis",
       "set": "Black Plague Base",
-      "image": "/base/fClovis.jpg"
+      "image": "/base",
+      "skills": []
     },
     {
       "name": "Nelly",
       "set": "Black Plague Base",
-      "image": "/base/fNelly.jpg"
+      "image": "/base",
+      "skills": []
     },
     {
       "name": "Samson",
       "set": "Black Plague Base",
-      "image": "/base/fSamson.jpg"
+      "image": "/base",
+      "skills": []
     },
     {
       "name": "Silas",
       "set": "Black Plague Base",
-      "image": "/base/fSilas.jpg"
+      "image": "/base",
+      "skills": []
     },
     {
       "name": "Ariane",
       "set": "Wulfsburg",
-      "image": "/wulfsburg/fAriane.jpg"
+      "image": "/wulfsburg",
+      "skills": []
     },
     {
       "name": "Karl",
       "set": "Wulfsburg",
-      "image": "/wulfsburg/fKarl.jpg"
+      "image": "/wulfsburg",
+      "skills": []
     },
     {
       "name": "Morrigan",
       "set": "Wulfsburg",
-      "image": "/wulfsburg/fMorrigan.jpg"
+      "image": "/wulfsburg",
+      "skills": []
     },
     {
       "name": "Theo",
       "set": "Wulfsburg",
-      "image": "/wulfsburg/fTheo.jpg"
+      "image": "/wulfsburg",
+      "skills": []
     },
     {
       "name": "Arnaud",
       "set": "Hero Box",
-      "image": "/herobox/fArnaud.jpg"
+      "image": "/herobox",
+      "skills": []
     },
     {
       "name": "Glynda",
       "set": "Hero Box",
-      "image": "/herobox/fGlynda.jpg"
+      "image": "/herobox",
+      "skills": []
     },
     {
       "name": "Julian",
       "set": "Hero Box",
-      "image": "/herobox/fJulian.jpg"
+      "image": "/herobox",
+      "skills": []
     },
     {
       "name": "Sylvia",
       "set": "Hero Box",
-      "image": "/herobox/fSylvia.jpg"
+      "image": "/herobox",
+      "skills": []
     },
     {
       "name": "Tucker",
       "set": "Hero Box",
-      "image": "/herobox/fTucker.jpg"
+      "image": "/herobox",
+      "skills": []
     },
     {
       "name": "",

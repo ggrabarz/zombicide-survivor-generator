@@ -51,7 +51,7 @@
     <div class="container">
       <md-grid-list cols="3" rowHeight="95:80" gutterSize="15px">
         <md-grid-tile *ngFor="let survivor of survivors; trackBy: survivor?.name" class="survivor-tile">
-          <img src="assets/img{{ survivor.image }}">
+          <img src="assets/img{{ survivor.image }}/f{{ survivor.name }}.jpg">
           <md-grid-tile-footer>
             <h3 md-line>{{ survivor.name }}</h3>
             <h2 md-line>{{ survivor.set }}</h2>
