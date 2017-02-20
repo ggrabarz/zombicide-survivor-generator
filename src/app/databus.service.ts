@@ -2,38 +2,71 @@ import { Injectable, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable, Subject } from 'rxjs/Rx';
 import { Skill, Survivor } from './model';
+import { SurvivorzCriteria } from './app.component';
+
+export type Skillz = Observable<Array<Skill>>;
+export type Survivorz = Observable<Array<Survivor>>;
 
 @Injectable()
-export class DatabusService implements OnInit {
+export class DatabusService {
 
-  _skillsRaw: Array<Skill> = [];
-  private skillsRequest: Observable<any>;
+  private _skillsRaw: Skillz;
+  private _survivorsRaw: Survivorz;
 
-  constructor(private http: Http) {
-    this.skillsRequest = this.http.get('/assets/static-data/skills.json');
-    this.skillsRequest.subscribe(res => { this._skillsRaw = res.json().data; });
+  constructor(private http: Http) { }
+
+  getSkills(): Skillz {
+    return this.http.get('/assets/static-data/skills.json')
+      .map(res => res.json().data)
+      .publishReplay(1).refCount();
   }
 
-  ngOnInit() {
-    console.log('service oninit');
-  }
-
-  getSkills(): Observable<Array<Skill>> {
-    if (this._skillsRaw.length === 0) {
-      return this.skillsRequest.map(x => Observable.empty()).concat(Observable.defer(() => Observable.of(this._skillsRaw)));
-    }
-    return Observable.of(this._skillsRaw);
-  }
-
-  getSkillsFilteredBy(term$: Observable<string>): Observable<Array<Skill>> {
+  getSkillsFilteredBy(term$: Observable<string>): Skillz {
     return term$.debounceTime(100).switchMap(text => this.filterSkills(text));
   }
 
-  filterSkills(text: string): Observable<Array<Skill>> {
-    return this.getSkills().map(
-      skills => skills.filter(
-        skill => skill.name.includes(text)
-      ));
+  private filterSkills(text: string): Skillz {
+    return this.getSkills().map(skills => skills.filter(
+      skill => skill.name.toLocaleLowerCase().includes(text.toLocaleLowerCase())
+    ));
   }
 
+  getSurvivors(): Survivorz {
+    return this.http.get('/assets/static-data/survivors.json')
+      .map(res => res.json().data.filter(d => d.name.length))
+      .publishReplay(1).refCount();
+  }
+
+  getSurvivorsFilteredBy(criteria$: Observable<SurvivorzCriteria>): Survivorz {
+    return criteria$.debounceTime(100).switchMap(criteria => this.filterSurvivors(criteria));
+  }
+
+  private filterSurvivors(criteria: SurvivorzCriteria): Survivorz {
+    return this.getSurvivors().map(survivors =>
+      survivors
+        .filter(sur =>
+          sur.name.toLocaleLowerCase().includes(criteria.name.toLocaleLowerCase()))
+        .filter(sur =>
+          this.filterSet(sur, criteria)
+        ));
+  }
+
+  private filterSet(survivor: any, criteria: SurvivorzCriteria): boolean {
+    let set;
+    switch (survivor.set) {
+      case 'Black Plague Base':
+        set = criteria.set.bs;
+        break;
+      case 'Wulfsburg':
+        set = criteria.set.wb;
+        break;
+      case 'Hero Box':
+        set = criteria.set.hb;
+        break;
+      case 'Guest Box':
+        set = criteria.set.gb;
+        break;
+    }
+    return set;
+  }
 }
