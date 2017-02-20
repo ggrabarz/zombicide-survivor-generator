@@ -25,10 +25,10 @@
           <div class="tab-content">
             <div>
               <md-input-container dividerColor="accent" align="right">
-                <input mdInput type="text" placeholder="Find a skill" #f2 (input)="skillFilter$.next(f2.value)">
+                <input mdInput type="text" placeholder="Find a skill" (input)="skillTerm$.next($event.target.value)">
                 <md-icon mdSuffix>search</md-icon>
               </md-input-container>
-              <div *ngFor="let skill of skills" class="skill-pill">
+              <div *ngFor="let skill of skills | async" class="skill-pill">
                 <strong>{{ skill.name }}</strong> - {{ skill.desc }}
               </div>
             </div>
@@ -38,6 +38,8 @@
       </md-tab-group>
 
     </md-sidenav>
+
+    <router-outlet></router-outlet>
 
     <md-toolbar class="set-filter">
       <md-chip-list (click)="filterSurvivors()">

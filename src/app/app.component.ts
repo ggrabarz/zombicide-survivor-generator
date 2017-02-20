@@ -1,39 +1,25 @@
-import { Component, OnInit, ViewChild, trigger, state, style, transition, animate } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Http } from '@angular/http';
-import { Subject } from 'rxjs/Subject';
+import { Observable, Subject } from 'rxjs/Rx';
 import 'rxjs/add/operator/debounceTime';
+
+import { DatabusService } from './databus.service';
+import { Skill, Survivor } from './model/index';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  animations: [
-    trigger('survivorState', [
-      transition('* => void', [
-        style({ opacity: '*' }),
-        animate("0.5s ease-in", style({ opacity: 0 }))
-      ]),
-      transition('void => false', [
-        /*no transition on first load*/
-      ]),
-      transition('void => *', [
-        style({ opacity: 0 }),
-        animate("0.5s ease-in", style({ opacity: '*' }))
-      ])
-    ])
-  ]
 })
 export class AppComponent implements OnInit {
-  skills: Array<any>;
-  skillsRaw = Array<any>();
-  survivors: Array<any>;
-  survivorsRaw = Array<any>();
 
+  skills = new Observable<Array<Skill>>();
+  skillTerm$ = new Subject<string>();
+
+  survivors = new Array<any>();
+  survivorsRaw = new Array<any>();
   survivorFilter$ = new Subject<string>();
   survivorFilter = '';
-
-  skillFilter$ = new Subject<string>();
-  skillFilter = '';
 
   set = {
     bs: true,
@@ -42,15 +28,9 @@ export class AppComponent implements OnInit {
     gb: true,
   };
 
-  constructor(private http: Http) { }
+  constructor(private http: Http, private data: DatabusService) { }
 
   ngOnInit() {
-    this.http.get('/assets/static-data/skills.json').subscribe(
-      res => {
-        this.skillsRaw = res.json().data;
-        this.skills = this.skillsRaw;
-      });
-
     this.http.get('/assets/static-data/survivors.json').subscribe(
       res => {
         this.survivorsRaw = res.json().data.filter(s => s.name !== '');
@@ -62,23 +42,17 @@ export class AppComponent implements OnInit {
       this.filterSurvivors();
     });
 
-    this.skillFilter$.debounceTime(100).subscribe(skill => {
-      this.skillFilter = skill.toLowerCase();
-      this.filterSkills();
-    });
-  }
-
-  filterSkills() {
-    this.skills = this.skillsRaw.filter(skill => skill.name.toLowerCase().includes(this.skillFilter) || skill.desc.toLowerCase().includes(this.skillFilter));
+    this.skills = this.data.getSkillsFilteredBy(this.skillTerm$)
+      .merge(this.data.getSkills().takeUntil(this.skillTerm$));
   }
 
   filterSurvivors() {
     this.survivors = this.filterSurvivorsBySet()
-      .filter(sur => sur.name.toLowerCase().includes(this.survivorFilter))
+      .filter(sur => sur.name.toLowerCase().includes(this.survivorFilter));
   }
 
   private filterSurvivorsBySet(): Array<any> {
-    let survivorsFiltered = this.survivorsRaw.filter(sur => this.filterSet(sur))
+    const survivorsFiltered = this.survivorsRaw.filter(sur => this.filterSet(sur));
     return survivorsFiltered;
   }
 
