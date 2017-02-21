@@ -13,13 +13,13 @@ export class DatabusService {
 
   survivorCriteria$ = new Subject<SurvivorzCriteria>();
   private lastSurvivorCriteria: SurvivorzCriteria = { name: '', set: undefined };
+
   constructor(private http: Http) { }
 
   getSkills(): Skillz {
     return this.http.get('/assets/static-data/skills.json')
       .map(res => res.json().data)
       .publishReplay(1).refCount();
-
   }
 
   getSkillsFilteredBy(term$: Observable<string>): Skillz {
@@ -30,6 +30,10 @@ export class DatabusService {
     return this.getSkills().map(skills => skills.filter(
       skill => skill.name.toLocaleLowerCase().includes(text.toLocaleLowerCase())
     ));
+  }
+
+  getSurvivor(name: string): Survivorz {
+    return this.getSurvivors().map(survivors => [survivors.find(sur => sur.name === name)]);
   }
 
   getSurvivors(): Survivorz {

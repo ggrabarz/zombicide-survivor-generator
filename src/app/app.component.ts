@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Http } from '@angular/http';
+import { Router } from '@angular/router';
 import { Observable, Subject, Observer } from 'rxjs/Rx';
 
 import { DatabusService, Skillz, Survivorz } from './databus.service';
@@ -16,7 +17,7 @@ export class AppComponent implements OnInit {
   skills: Skillz;
   survivors: Survivorz;
 
-  constructor(private data: DatabusService) { }
+  constructor(private data: DatabusService, private router: Router) { }
 
   ngOnInit() {
     this.survivors = this.data.getSurvivorsFilteredBy(this.data.survivorCriteria$)
@@ -28,5 +29,9 @@ export class AppComponent implements OnInit {
 
   filterSurvivors(name): void {
     this.data.survivorCriteria$.next({ name: name });
+  }
+
+  goSurvivorDetails(name: string) {
+    this.router.navigate(['/survivor', name]);
   }
 }

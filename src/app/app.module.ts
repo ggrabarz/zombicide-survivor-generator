@@ -8,11 +8,13 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { DatabusService } from './databus.service';
 import { SurvivorsListComponent } from './survivors-list/survivors-list.component';
+import { SurvivorDetailsComponent } from './survivor-details/survivor-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SurvivorsListComponent
+    SurvivorsListComponent,
+    SurvivorDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +22,7 @@ import { SurvivorsListComponent } from './survivors-list/survivors-list.componen
     HttpModule,
     MaterialModule.forRoot(),
     RouterModule.forRoot([
-      { path: 'survivor/:id', component: SurvivorsListComponent },
+      { path: 'survivor/:name', component: SurvivorDetailsComponent },
       { path: 'survivors', component: SurvivorsListComponent },
       { path: '', redirectTo: '/survivors', pathMatch: 'full' }
     ])

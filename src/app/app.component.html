@@ -1,47 +1,43 @@
-<div>
+<md-sidenav-container>
   <md-toolbar color="primary">
     <md-icon class="toolbar-icon">face</md-icon>Zombicide Survivor Generator
   </md-toolbar>
-  <md-sidenav-container>
-    <md-sidenav class="sidenav-content" align="end" mode="side" opened>
+  <md-sidenav class="sidenav-content" align="end" mode="side" opened>
 
-      <md-tab-group>
+    <md-tab-group>
 
-        <md-tab label="Survivors">
-          <div class="tab-content">
-            <div>
-              <md-input-container dividerColor="accent" align="right">
-                <input mdInput type="text" placeholder="Find a survivor by name" (input)="filterSurvivors($event.target.value)">
-                <md-icon mdSuffix>search</md-icon>
-              </md-input-container>
-              <div *ngFor="let survivor of survivors | async" class="skill-pill">
-                <strong>{{ survivor.name }}</strong> - {{ survivor.set }}
-              </div>
+      <md-tab label="Survivors">
+        <div class="tab-content">
+          <div>
+            <md-input-container dividerColor="accent" align="right">
+              <input mdInput type="text" placeholder="Find a survivor by name" (input)="filterSurvivors($event.target.value)">
+              <md-icon mdSuffix>search</md-icon>
+            </md-input-container>
+            <div *ngFor="let survivor of survivors | async" class="skill-pill" (click)="goSurvivorDetails(survivor.name)">
+              <strong>{{ survivor.name }}</strong> - {{ survivor.set }}
             </div>
           </div>
-        </md-tab>
+        </div>
+      </md-tab>
 
-        <md-tab label="Skills">
-          <div class="tab-content">
-            <div>
-              <md-input-container dividerColor="accent" align="right">
-                <input mdInput type="text" placeholder="Find a skill" (input)="skillTerm$.next($event.target.value)">
-                <md-icon mdSuffix>search</md-icon>
-              </md-input-container>
-              <div *ngFor="let skill of skills | async" class="skill-pill">
-                <strong>{{ skill.name }}</strong> - {{ skill.desc }}
-              </div>
+      <md-tab label="Skills">
+        <div class="tab-content">
+          <div>
+            <md-input-container dividerColor="accent" align="right">
+              <input mdInput type="text" placeholder="Find a skill" (input)="skillTerm$.next($event.target.value)">
+              <md-icon mdSuffix>search</md-icon>
+            </md-input-container>
+            <div *ngFor="let skill of skills | async" class="skill-pill">
+              <strong>{{ skill.name }}</strong> - {{ skill.desc }}
             </div>
           </div>
-        </md-tab>
+        </div>
+      </md-tab>
 
-      </md-tab-group>
+    </md-tab-group>
 
-    </md-sidenav>
+  </md-sidenav>
 
-    <router-outlet></router-outlet>
+  <router-outlet></router-outlet>
 
-
-
-  </md-sidenav-container>
-</div>
+</md-sidenav-container>

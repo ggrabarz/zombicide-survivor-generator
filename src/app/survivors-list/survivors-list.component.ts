@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable, Subject, Observer } from 'rxjs/Rx';
 
 import { DatabusService, Skillz, Survivorz } from './../databus.service';
@@ -23,7 +24,7 @@ export class SurvivorsListComponent implements OnInit {
   survivors: Survivorz;
   private set = { bs: true, wb: true, hb: true, gb: true };
 
-  constructor(private data: DatabusService) { }
+  constructor(private data: DatabusService, private router: Router) { }
 
   ngOnInit() {
     this.survivors = this.data.getSurvivorsFilteredBy(this.data.survivorCriteria$)
@@ -32,5 +33,9 @@ export class SurvivorsListComponent implements OnInit {
 
   filterSurvivors(): void {
     this.data.survivorCriteria$.next({ set: this.set });
+  }
+
+  goSurvivorDetails(name: string) {
+    this.router.navigate(['/survivor', name]);
   }
 }
