@@ -1,0 +1,18 @@
+.container {
+    padding: 20px;
+}
+
+.container md-grid-tile:hover {
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.container .survivor-tile img {
+    width: 100%;
+    transition: all .1s ease-in-out;
+}
+
+.container .survivor-tile img:hover {
+    transform: scale(1.05, 1.05);
+    transition: all .1s ease-in-out;
+}

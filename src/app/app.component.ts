@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
       .merge(this.data.getSkills().takeUntil(this.skillTerm$));
   }
 
-  filterSurvivors(name = ''): void {
+  filterSurvivors(name): void {
     this.data.survivorCriteria$.next({ name: name });
   }
 }

@@ -1,58 +1,39 @@
 .toolbar-icon {
-  font-size: 24px;
-  margin-right: 10px;
+    font-size: 24px;
+    margin-right: 10px;
 }
 
 md-sidenav-container {
-  height: 100%;
-}
-
-.container {
-  padding: 20px;
+    height: 100%;
 }
 
 .sidenav-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-left: 1px solid rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid rgba(0, 0, 0, 0.5);
 }
 
 .sidenav-content .tab-content {
-  max-width: 20vw;
-  padding: 10px;
+    max-width: 20vw;
+    padding: 10px;
 }
 
 .sidenav-content .tab-content .skill-pill {
-  word-wrap: break-word;  
-  /*border-bottom: 1px solid rgba(0, 0, 0, 0.5);*/
-  background: rgba(0,0,0,.22);
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  padding: 10px;
-  margin-bottom: 10px;
+    word-wrap: break-word;
+    /*border-bottom: 1px solid rgba(0, 0, 0, 0.5);*/
+    background: rgba(0, 0, 0, .22);
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    padding: 10px;
+    margin-bottom: 10px;
 }
 
-.sidenav-content .tab-content md-input-container{
-  width: 100%;
+.sidenav-content .tab-content md-input-container {
+    width: 100%;
 }
 
 .set-filter.mat-toolbar>div {
-  display: none;
-}
-
-md-grid-tile:hover { 
-  overflow: hidden;
-  cursor: pointer;
-}
-
-.survivor-tile img {
-  width: 100%;
-  transition: all .1s ease-in-out;
-}
-
-.survivor-tile img:hover {
-  transform: scale(1.05,1.05);
-  transition: all .1s ease-in-out;
+    display: none;
 }
