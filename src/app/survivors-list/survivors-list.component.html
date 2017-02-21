@@ -1,0 +1,23 @@
+<md-toolbar class="set-filter">
+    <md-chip-list (click)="filterSurvivors()">
+        <md-chip color="primary" [selected]="set.bs" (click)="set.bs = !set.bs">Base Set</md-chip>
+        <md-chip color="primary" [selected]="set.wb" (click)="set.wb = !set.wb">Wulfsburg</md-chip>
+        <md-chip color="primary" [selected]="set.hb" (click)="set.hb = !set.hb">Hero Box</md-chip>
+        <md-chip color="primary" [selected]="set.gb" (click)="set.gb = !set.gb">Guest Box</md-chip>
+    </md-chip-list>
+</md-toolbar>
+
+<div class="container">
+    <md-grid-list cols="3" rowHeight="95:80" gutterSize="15px">
+        <md-grid-tile *ngFor="let survivor of survivors | async" class="survivor-tile">
+            <img src="assets/img{{ survivor.image }}/f{{ survivor.name }}.jpg">
+            <md-grid-tile-footer>
+                <h3 md-line>{{ survivor.name }}</h3>
+                <h2 md-line>{{ survivor.set }}</h2>
+                <button md-icon-button>
+            <md-icon>info</md-icon>
+          </button>
+            </md-grid-tile-footer>
+        </md-grid-tile>
+    </md-grid-list>
+</div>

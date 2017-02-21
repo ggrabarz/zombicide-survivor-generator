@@ -2,7 +2,7 @@ import { Injectable, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable, Subject } from 'rxjs/Rx';
 import { Skill, Survivor } from './model';
-import { SurvivorzCriteria } from './app.component';
+import { SurvivorzCriteria } from './survivors-list/survivors-list.component';
 
 export type Skillz = Observable<Array<Skill>>;
 export type Survivorz = Observable<Array<Survivor>>;
@@ -10,8 +10,7 @@ export type Survivorz = Observable<Array<Survivor>>;
 @Injectable()
 export class DatabusService {
 
-  private _skillsRaw: Skillz;
-  private _survivorsRaw: Survivorz;
+  survivorCriteria$ = new Subject<SurvivorzCriteria>();
 
   constructor(private http: Http) { }
 
@@ -52,20 +51,22 @@ export class DatabusService {
   }
 
   private filterSet(survivor: any, criteria: SurvivorzCriteria): boolean {
-    let set;
-    switch (survivor.set) {
-      case 'Black Plague Base':
-        set = criteria.set.bs;
-        break;
-      case 'Wulfsburg':
-        set = criteria.set.wb;
-        break;
-      case 'Hero Box':
-        set = criteria.set.hb;
-        break;
-      case 'Guest Box':
-        set = criteria.set.gb;
-        break;
+    let set = true;
+    if (criteria.set) {
+      switch (survivor.set) {
+        case 'Black Plague Base':
+          set = criteria.set.bs;
+          break;
+        case 'Wulfsburg':
+          set = criteria.set.wb;
+          break;
+        case 'Hero Box':
+          set = criteria.set.hb;
+          break;
+        case 'Guest Box':
+          set = criteria.set.gb;
+          break;
+      }
     }
     return set;
   }
