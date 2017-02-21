@@ -5,7 +5,7 @@ import { DatabusService, Skillz, Survivorz } from './../databus.service';
 import { Skill, Survivor } from './../model/index';
 
 export interface SurvivorzCriteria {
-  name: string;
+  name?: string;
   set?: {
     bs: boolean;
     wb: boolean;
@@ -20,7 +20,6 @@ export interface SurvivorzCriteria {
   styleUrls: ['./survivors-list.component.css']
 })
 export class SurvivorsListComponent implements OnInit {
-
   survivors: Survivorz;
   private set = { bs: true, wb: true, hb: true, gb: true };
 
@@ -31,7 +30,7 @@ export class SurvivorsListComponent implements OnInit {
       .merge(this.data.getSurvivors().takeUntil(this.data.survivorCriteria$));
   }
 
-  filterSurvivors(name: string = ''): void {
-    this.data.survivorCriteria$.next({ name: name, set: this.set });
+  filterSurvivors(): void {
+    this.data.survivorCriteria$.next({ set: this.set });
   }
 }

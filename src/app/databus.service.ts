@@ -3,6 +3,7 @@ import { Http } from '@angular/http';
 import { Observable, Subject } from 'rxjs/Rx';
 import { Skill, Survivor } from './model';
 import { SurvivorzCriteria } from './survivors-list/survivors-list.component';
+import * as _ from 'lodash';
 
 export type Skillz = Observable<Array<Skill>>;
 export type Survivorz = Observable<Array<Survivor>>;
@@ -11,13 +12,14 @@ export type Survivorz = Observable<Array<Survivor>>;
 export class DatabusService {
 
   survivorCriteria$ = new Subject<SurvivorzCriteria>();
-
+  private lastSurvivorCriteria: SurvivorzCriteria = { name: '', set: undefined };
   constructor(private http: Http) { }
 
   getSkills(): Skillz {
     return this.http.get('/assets/static-data/skills.json')
       .map(res => res.json().data)
       .publishReplay(1).refCount();
+
   }
 
   getSkillsFilteredBy(term$: Observable<string>): Skillz {
@@ -41,6 +43,7 @@ export class DatabusService {
   }
 
   private filterSurvivors(criteria: SurvivorzCriteria): Survivorz {
+    criteria = (this.lastSurvivorCriteria = _.merge(this.lastSurvivorCriteria, criteria));
     return this.getSurvivors().map(survivors =>
       survivors
         .filter(sur =>
