@@ -1,11 +1,15 @@
 .cards-container {
     display: flex;
+    align-self: flex-end;
+    align-items: center;
+    align-content: center;
     flex-direction: row;
     flex-wrap: nowrap;
+    /*flex-flow: row nowrap;*/
     justify-content: space-around;
-    align-items: flex-start;
 }
 
 .card {
-    width: 300px;
+    flex-grow: 0.35;
+    flex-basis: 0;
 }
