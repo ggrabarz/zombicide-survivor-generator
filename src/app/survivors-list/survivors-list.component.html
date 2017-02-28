@@ -7,7 +7,7 @@
     </md-chip-list>
 </md-toolbar>
 
-<div class="container">
+<div class="list-container">
     <md-grid-list cols="3" rowHeight="95:80" gutterSize="15px">
         <md-grid-tile class="survivor-tile" (click)="goSurvivorDetails(survivor.name)" *ngFor="let survivor of survivors | async">
             <img src="assets/img{{ survivor.image }}/f{{ survivor.name }}.jpg">

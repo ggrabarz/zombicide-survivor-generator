@@ -1,6 +1,5 @@
 .cards-container {
     display: flex;
-    align-self: flex-end;
     align-items: center;
     align-content: center;
     flex-direction: row;
@@ -12,4 +11,5 @@
 .card {
     flex-grow: 0.35;
     flex-basis: 0;
+    margin: auto;
 }
