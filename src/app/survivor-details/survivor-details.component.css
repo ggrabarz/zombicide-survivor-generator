@@ -1,15 +1,14 @@
 .cards-container {
+    min-height: calc(100% - 64px);
     display: flex;
-    align-items: center;
-    align-content: center;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    /*flex-flow: row nowrap;*/
     justify-content: space-around;
+    align-items: stretch;
+    align-content: center;
+    flex-wrap: wrap;
+    padding: 8px;
 }
 
 .card {
-    flex-grow: 0.35;
-    flex-basis: 0;
-    margin: auto;
+    flex: 1 0 300px;
+    margin: 8px;
 }
