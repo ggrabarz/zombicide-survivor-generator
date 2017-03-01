@@ -1,0 +1,30 @@
+.toolbar-icon {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+md-sidenav-container {
+    min-height: 100%;
+}
+
+md-sidenav {
+    border-left: 1px solid rgba(0, 0, 0, 0.5);
+    max-width: 25vw;
+     
+    md-tab-group {
+        .md-tab-content {
+            padding: 10px;
+
+            .skill-pill {
+                background: rgba(0, 0, 0, .22);
+                padding: 8px 10px;
+                margin-bottom: 10px;
+                cursor: pointer;
+            }
+
+            md-input-container {
+                width: 100%;
+            }
+        }
+    }
+}

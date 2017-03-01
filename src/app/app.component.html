@@ -2,12 +2,12 @@
   <md-toolbar color="primary">
     <md-icon class="toolbar-icon">face</md-icon>Zombicide Survivor Generator
   </md-toolbar>
-  <md-sidenav class="sidenav-content" align="end" mode="side" opened>
+  <md-sidenav class="md-sidenav-content" align="end" mode="side" opened>
 
     <md-tab-group>
 
       <md-tab label="Survivors">
-        <div class="tab-content">
+        <div class="md-tab-content">
           <div>
             <md-input-container dividerColor="accent" align="right">
               <input mdInput type="text" placeholder="Find a survivor by name" (input)="filterSurvivors($event.target.value)">
@@ -21,7 +21,7 @@
       </md-tab>
 
       <md-tab label="Skills">
-        <div class="tab-content">
+        <div class="md-tab-content">
           <div>
             <md-input-container dividerColor="accent" align="right">
               <input mdInput type="text" placeholder="Find a skill" (input)="skillTerm$.next($event.target.value)">
