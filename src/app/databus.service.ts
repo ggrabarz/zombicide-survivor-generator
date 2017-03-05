@@ -5,11 +5,14 @@ import { Skill, Survivor } from './model';
 import { SurvivorzCriteria } from './survivors-list/survivors-list.component';
 import * as _ from 'lodash';
 
-export type Skillz = Observable<Array<Skill>>;
-export type Survivorz = Observable<Array<Survivor>>;
+export type Skillz = Observable<Skill[]>;
+export type Survivorz = Observable<Survivor[]>;
 
 @Injectable()
 export class DatabusService {
+
+  private cachedSkills: Skillz;
+  private cachedSurvivorz: Survivorz;
 
   survivorCriteria$ = new Subject<SurvivorzCriteria>();
   private lastSurvivorCriteria: SurvivorzCriteria = { name: '', set: undefined };
@@ -17,9 +20,13 @@ export class DatabusService {
   constructor(private http: Http) { }
 
   getSkills(): Skillz {
-    return this.http.get('/assets/static-data/skills.json')
-      .map(res => res.json().data)
-      .publishReplay(1).refCount();
+    if (this.cachedSkills) {
+      return this.cachedSkills;
+    } else {
+      return this.cachedSkills = this.http.get('/assets/static-data/skills.json')
+        .map(res => res.json().data)
+        .publishReplay(1).refCount();
+    }
   }
 
   getSkillsFilteredBy(term$: Observable<string>): Skillz {
@@ -32,18 +39,26 @@ export class DatabusService {
     ));
   }
 
-  getSurvivor(name: string): Survivorz {
-    return this.getSurvivors().map(survivors => [survivors.find(sur => sur.name === name)]);
+  getSurvivor(name: string): Observable<Survivor> {
+    return this.getSurvivors().map(survivors => survivors.find(sur => sur.name === name));
   }
 
   getSurvivors(): Survivorz {
-    return this.http.get('/assets/static-data/survivors.json')
-      .map(res => res.json().data.filter(d => d.name.length))
-      .publishReplay(1).refCount();
+    if (this.cachedSurvivorz) {
+      return this.cachedSurvivorz;
+    } else {
+      return this.cachedSurvivorz = this.http.get('/assets/static-data/survivors.json')
+        .map(res => res.json().data.filter(d => d.name.length))
+        .publishReplay(1).refCount();
+    }
   }
 
   getSurvivorsFilteredBy(criteria$: Observable<SurvivorzCriteria>): Survivorz {
     return criteria$.debounceTime(100).switchMap(criteria => this.filterSurvivors(criteria));
+  }
+
+  getSkillsForSurvivor(survivor: Observable<Survivor>): Skillz {
+    return survivor.switchMap(sur => Observable.from(sur.skills).flatMap(skill => this.filterSkills(skill)).combineAll());
   }
 
   private filterSurvivors(criteria: SurvivorzCriteria): Survivorz {

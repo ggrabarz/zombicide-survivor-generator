@@ -4,25 +4,21 @@
 }
 
 md-sidenav-container {
-    height: inherit;
-    min-height: 100%;
+    min-height: 100vh;
 }
 
 md-sidenav {
     border-left: 1px solid rgba(0, 0, 0, 0.5);
-    max-width: 25vw;
-     
+    max-width: 26vw;
     md-tab-group {
         .md-tab-content {
             padding: 10px;
-
             .skill-pill {
                 background: rgba(0, 0, 0, .22);
                 padding: 8px 10px;
                 margin-bottom: 10px;
                 cursor: pointer;
             }
-
             md-input-container {
                 width: 100%;
             }

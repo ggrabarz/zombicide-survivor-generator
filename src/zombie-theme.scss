@@ -1,10 +1,8 @@
 @import '~@angular/material/core/theming/all-theme';
-
+@import '~@angular/material/toolbar/toolbar';
 @include mat-core();
-
+@include mat-toolbar-height(48px !important);
 $dark-p: mat-palette($mat-red, 800);
 $dark-a: mat-palette($mat-blue-grey);
-
 $dark-t: mat-dark-theme($dark-p, $dark-a);
-
 @include angular-material-theme($dark-t);

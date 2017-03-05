@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
 
 import { Survivor } from '../model/survivor';
-import { DatabusService, Survivorz } from '../databus.service';
+import { DatabusService, Survivorz, Skillz } from '../databus.service';
 
 @Component({
   selector: 'app-survivor-details',
@@ -12,15 +12,19 @@ import { DatabusService, Survivorz } from '../databus.service';
 })
 export class SurvivorDetailsComponent implements OnInit {
 
+  // survivor as array co we can use ng-for in template, otherwise we would need to use | async for every field
   survivor: Survivorz;
+  skillz: Skillz;
 
   constructor(private activeRoute: ActivatedRoute, private data: DatabusService) { }
 
   ngOnInit() {
     this.survivor = this.activeRoute.params.distinctUntilChanged()
-      .switchMap(params => this.data.getSurvivor(params['name']));
-
-    this.survivor.subscribe(x => console.log(x[0].skills));
+      .switchMap(params => {
+        const sur = this.data.getSurvivor(params['name']);
+        this.skillz = this.data.getSkillsForSurvivor(sur);
+        return sur.map(x => [x]);
+      });
   }
 
 }

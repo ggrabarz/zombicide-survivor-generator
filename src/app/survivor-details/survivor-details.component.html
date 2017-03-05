@@ -4,11 +4,7 @@
       <md-card-title>{{ sur.name }}</md-card-title>
       <md-card-subtitle>{{ sur.set }}</md-card-subtitle>
     </md-card-header>
-    <img md-card-image src="assets/img{{ sur.image }}/i{{ sur.name }}.jpg" alt="{{ sur.name }}`s image ">
-    <md-card-content>
-      <p></p>
-    </md-card-content>
-    <md-card-actions></md-card-actions>
+    <img md-card-image src="assets/img{{ sur.image }}/i{{ sur.name }}.jpg" alt="{{ sur.name }}`s image">
   </md-card>
 
   <md-card class="card" *ngFor="let sur of survivor | async; trackBy: survivor?.name">
@@ -16,12 +12,15 @@
       <md-card-title>{{ sur.name }}</md-card-title>
       <md-card-subtitle>{{ sur.set }}</md-card-subtitle>
     </md-card-header>
-    <img md-card-image src="assets/img{{ sur.image }}/f{{ sur.name }}.jpg" alt="{{ sur.name }}`s image ">
-    <md-card-content>
-      <div *ngFor="let skill of sur.skills" class="skill-pill">
-        {{ skill }}
+    <div md-card-image class="overlay">
+      <img src="assets/img{{ sur.image }}/f{{ sur.name }}.jpg" alt="{{ sur.name }}`s image">
+      <div>
+        <div *ngFor="let skill of skillz | async" class="skill-pill">
+          <span>
+            <strong>{{ skill?.name }}</strong> - {{ skill?.desc }}
+          </span>
+        </div>
       </div>
-    </md-card-content>
-    <md-card-actions></md-card-actions>
+    </div>
   </md-card>
 </div>
